@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <h1>Créer une Nouvelle Annonce</h1>
+
+
+
+{{ form_start(form) }}
+<div class="container">
+
+    <div class="card bg-light">
+        <div class="col-md-12 col-xl-12">
+            <fieldset>
+                <legend>Annonce</legend>
+
+                <div class="card-body mx-auto" style="max-width: 1000px;">
+
+                    <div class="col-md-4">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text">Titre d'annonce</i> </span>
+                            </div>
+                            {{ form_errors(form.nom) }}
+                            {{ form_widget(form.nom ,  {'attr': {'placeholder': 'Titre' , 'class': 'form-control'}})}}
+                            {{ form_help(form.nom ) }}
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text">Prix</i> </span>
+                            </div>
+                            {{ form_errors(form.prix) }}
+                            {{ form_widget(form.prix ,  {'attr': {'placeholder': 'prix' , 'class': 'form-control'}})}}
+                            {{ form_help(form.prix ) }}
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text">Date</i> </span>
+                            </div>
+                            {{ form_errors(form.date) }}
+                            {{ form_widget(form.date ,  {'attr': {'placeholder': 'Date' , 'class': 'form-control'}})}}
+                            {{ form_help(form.date ) }}
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text">Catégorie</i> </span>
+                            </div>
+                            {{ form_errors(form.categorie) }}
+                            {{ form_widget(form.categorie ,  {'attr': {'placeholder': 'Catégorie' , 'class': 'form-control'}})}}
+                            {{ form_help(form.categorie ) }}
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text">Image</i> </span>
+                            </div>
+                            {{ form_errors(form.image) }}
+                            {{ form_widget(form.image ,  {'attr': {'placeholder': 'Image' , 'class': 'form-control'}})}}
+                            {{ form_help(form.image ) }}
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text">Description</i> </span>
+                            </div>
+                            {{ form_errors(form.description) }}
+                            {{ form_widget(form.description ,  {'attr': {'placeholder': 'Description' , 'class': 'form-control'}})}}
+                            {{ form_help(form.description ) }}
+
+                        </div>
+                    </div>
+
+
+
+    <div class="container">
+        <div class="center">
+            <button class=" btn btn-primary ">{{ button_label|default('Ajouter') }}</button>
+        </div>
+    </div>
+                </div></fieldset></div></div></div>
+
+    {{ form_end(form) }}
+
+{% endblock %}

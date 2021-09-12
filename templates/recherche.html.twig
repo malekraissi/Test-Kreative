@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% endblock %}
+
+{% block body %}
+
+
+
+
+
+
+    <div class="row">
+
+        <h2 class="title-1 m-b-25">Liste des annonces</h2>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">nom</th>
+                <th scope="col">image</th>
+                <th scope="col">prix</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for annonce in annonces %}
+                <tr>
+
+                    <td>{{ annonce.nom }}</td>
+
+                    <td><img  src="{{ asset('public/uploads/' ~ annonce.image) }}" ></td>
+                    <td>{{ annonce.prix }}</td>
+
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="43">Cette annonce n'est pas disponible</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+    <div>
+        <a href="{{ path('annonce_index') }}"> retourne à la page d'accueil</a>
+    </div>
+
+
+
+{% endblock %}

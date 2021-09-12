@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+{% block body %}
+
+<h1>Détails d'annonce</h1>
+    <table class="table">
+        <tbody>
+
+            <tr>
+                <th>Nom</th>
+                <td>{{ annonce.nom }}</td>
+            </tr>
+
+            <tr>
+                <th>Date</th>
+                <td>{{ annonce.date ? annonce.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ annonce.prix }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ annonce.description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+
+        <td><img  src="{{ asset('public/uploads/' ~ annonce.image) }}" ></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn-primary"><a href="{{ path('annonce_index') }}"> Liste des annonces </a></button>
+
+
+
+{% endblock %}

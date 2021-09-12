@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Liste <b>D'annonces</b></h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                <!-- Carousel indicators -->
+
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                    <div class="item carousel-item active">
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                                {% for annonce in annonces %}
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="{{ asset('public/uploads/'~annonce.image) }}" class="img-responsive img-fluid" alt="" style="width:150px">
+
+                                        </div>
+
+                                        <div class="thumb-content">
+                                            <h4>{{ annonce.nom }}</h4>
+                                            <p class="item-price"> <span>{{ annonce.prix }}dt</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="{{ path('annonce_show', {'id': annonce.id}) }}" class="btn btn-primary">Plus détails</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div></div></div></div>
+
+
+
+    <a class="btn-primary" href="{{ path('home') }}">Retourne  à la page d'accueil </a>
+{% endblock %}
